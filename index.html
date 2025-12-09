@@ -26,6 +26,7 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: MyResume
@@ -37,6 +38,19 @@
 </head>
 
 <body class="index-page">
+  <div class="page-loader" id="pageLoader">
+  <div class="loader-content">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">
+      <span class="loader-typing">Loading...</span>
+    </div>
+  </div>
+</div>
+<div class="decorative-shapes">
+  <div class="shape circle"></div>
+  <div class="shape square"></div>
+  <div class="shape triangle"></div>
+</div>
 
   <header id="header" class="header d-flex flex-column justify-content-center">
 
@@ -134,7 +148,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-emoji-smile"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
               <p>Happy Clients</p>
             </div>
           </div><!-- End Stats Item -->
@@ -142,7 +156,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-journal-richtext"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
               <p>Projects</p>
             </div>
           </div><!-- End Stats Item -->
@@ -150,7 +164,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-headset"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="purecounter"></span>
               <p>Hours Of Support</p>
             </div>
           </div><!-- End Stats Item -->
@@ -159,7 +173,7 @@
             <i class="bi bi-people"></i>
             .
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
               <p>Hard Workers</p>
             </div>
           </div><!-- End Stats Item -->
@@ -653,6 +667,14 @@ Driven, curious, and constantly learning to turn ideas into impact.</p>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+  setTimeout(function () {
+    var loader = document.getElementById("pageLoader");
+    if (loader) {
+      loader.style.display = "none";
+    }
+  }, 800);
+</script>
 
 </body>
 
