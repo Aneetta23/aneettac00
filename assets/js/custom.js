@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.querySelector(".php-email-form");
-  if (!form) return;
+  if (!form) return; 
 
   // Inputs
   const nameInput = form.querySelector('input[name="name"]');
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitBtn = form.querySelector('button[type="submit"]');
   const resultsBox = document.getElementById("formResults");
 
-  submitBtn.disabled = true; // initially disabled
+  submitBtn.disabled = true;
 
   /* -------------------------
         ERROR HANDLING
