@@ -469,3 +469,36 @@ html, body {
     transition: none !important;
   }
 }
+.game-board {
+  display: grid;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.card {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  background: #4da3ff;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+.card.flip {
+  background: #fff;
+}
+
+.card.disable {
+  pointer-events: none;
+}
+
+.card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}

@@ -171,3 +171,109 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+document.addEventListener("DOMContentLoaded", () => {
+
+  const gameBoard = document.getElementById("gameBoard");
+  const movesEl = document.getElementById("moves");
+  const matchesEl = document.getElementById("matches");
+  const winMessage = document.getElementById("winMessage");
+
+  const difficultySelect = document.getElementById("difficulty");
+  const startBtn = document.getElementById("startGame");
+  const restartBtn = document.getElementById("restartGame");
+
+  let icons = ["🙂","🐣","🍟","🚗","🐶","⭐","💎","⚽"];
+  let cardValues = [];
+  let firstCard = null;
+  let secondCard = null;
+  let lockBoard = false;
+  let moves = 0;
+  let matches = 0;
+
+  function startGame() {
+    winMessage.style.display = "none";
+
+    moves = 0;
+    matches = 0;
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+
+    movesEl.textContent = 0;
+    matchesEl.textContent = 0;
+
+    let size = difficultySelect.value === "easy" ? 12 : 24;
+    let grid = difficultySelect.value === "easy" ? "repeat(4, 1fr)" : "repeat(6, 1fr)";
+    let chosenIcons = icons.slice(0, size / 2);
+
+    cardValues = [...chosenIcons, ...chosenIcons].sort(() => Math.random() - 0.5);
+
+    gameBoard.style.gridTemplateColumns = grid;
+    gameBoard.innerHTML = "";
+
+    cardValues.forEach(value => {
+      let card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `<div class="card-content">${value}</div>`;
+      card.querySelector(".card-content").style.visibility = "hidden";
+
+      card.addEventListener("click", () => flipCard(card));
+      gameBoard.appendChild(card);
+    });
+  }
+
+  function flipCard(card) {
+    if (lockBoard || card === firstCard) return;
+
+    card.querySelector(".card-content").style.visibility = "visible";
+
+    if (!firstCard) {
+      firstCard = card;
+      return;
+    }
+
+    secondCard = card;
+    moves++;
+    movesEl.textContent = moves;
+
+    checkMatch();
+  }
+
+  function checkMatch() {
+    lockBoard = true;
+
+    let firstValue = firstCard.querySelector(".card-content").textContent;
+    let secondValue = secondCard.querySelector(".card-content").textContent;
+
+    if (firstValue === secondValue) {
+      matches++;
+      matchesEl.textContent = matches;
+
+      firstCard.classList.add("disable");
+      secondCard.classList.add("disable");
+
+      resetFlip();
+
+      if (matches === cardValues.length / 2) {
+        winMessage.style.display = "block";
+      }
+
+    } else {
+      setTimeout(() => {
+        firstCard.querySelector(".card-content").style.visibility = "hidden";
+        secondCard.querySelector(".card-content").style.visibility = "hidden";
+        resetFlip();
+      }, 800);
+    }
+  }
+
+  function resetFlip() {
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+  }
+
+  startBtn.addEventListener("click", startGame);
+  restartBtn.addEventListener("click", startGame);
+
+});
