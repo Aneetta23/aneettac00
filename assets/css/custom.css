@@ -95,9 +95,7 @@ a:active {
   background-color: #994b00;
   border-color: #663300;
 }
-/* =========================
-   TASK 3: SECTION SPACING
-   ========================= */
+
 
 section {
   padding-top: 60px;
@@ -219,9 +217,7 @@ a:hover {
 a:active {
   color: #0f172a;
 }
-/* =========================
-   OPTIONAL TASK 1: STYLED LISTS
-   ========================= */
+
 
 /* Unordered list with custom symbol */
 ul.custom-list {
@@ -269,9 +265,7 @@ ol.custom-counter li::before {
   line-height: 26px;
   font-size: 14px;
 }
-/* =========================
-   OPTIONAL TASK 2: TABLE STYLING
-   ========================= */
+
 
 table.custom-table {
   width: 100%;
@@ -300,18 +294,13 @@ table.custom-table {
 .custom-table tr:hover {
   background-color: #dbe9ff;
 }
-/* =========================
-  /* =========================
-   GLOBAL RESET
-   ========================= */
+
 html, body {
   margin: 0;
   padding: 0;
 }
 
-/* =========================
-   PAGE LOADER – FINAL WORKING
-   ========================= */
+
 
 .page-loader {
   position: fixed;
@@ -370,9 +359,7 @@ html, body {
   51%, 100% { border-color: transparent; }
 }
 
-/* =========================
-   FADE IN SECTIONS
-   ========================= */
+
 
 @keyframes fadeIn {
   from {
@@ -459,9 +446,7 @@ html, body {
   100% { transform: translateY(0) rotate(360deg); }
 }
 
-/* =========================
-   ACCESSIBILITY
-   ========================= */
+
 
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -501,4 +486,22 @@ html, body {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+}
+body,
+section,
+main,
+.resume,
+.about,
+.stats,
+.contact,
+.portfolio,
+.testimonials {
+  background-color: #edd7ed !important;
+}
+
+/* If image section still stays dark */
+.section-bg,
+.bg-light,
+.bg-white {
+  background-color: #e7ccee !important;
 }
