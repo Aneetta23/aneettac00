@@ -74,7 +74,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section light-background">
 
-      <img src="assets/img/firstpic.jpg" alt="">
+      <img src="assets/img/hehehehe.jpeg" alt="">
 
       <div class="container" data-aos="zoom-out">
         <div class="row justify-content-center">
@@ -745,6 +745,32 @@ Driven, curious, and constantly learning to turn ideas into impact.</p>
 
   </div>
 </section>
+<section id="smart-light" class="section light-background">
+  <div class="container section-title">
+    <h2>Smart Room Light Controller</h2>
+    <p>A simple smart-home lighting simulator using HTML, CSS and JavaScript.</p>
+  </div>
+
+  <div class="container text-center">
+    <div id="bulb" style="
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      background:#333;
+      margin:20px auto;
+      transition:0.3s;">
+    </div>
+
+    <button class="btn btn-primary mb-3" onclick="toggleLight()">ON / OFF</button>
+
+    <input type="range" min="0" max="100" value="50"
+           oninput="changeBrightness(this.value)"
+           class="form-range">
+
+    <p id="lightStatus" class="mt-2">Light is OFF</p>
+  </div>
+</section>
+
 
   </main>
 

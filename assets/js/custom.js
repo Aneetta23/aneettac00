@@ -351,3 +351,43 @@ document.addEventListener("DOMContentLoaded", () => {
   loadBestScores();
 
 });
+let lightOn = false;
+
+function toggleLight() {
+  const bulb = document.getElementById("bulb");
+  const status = document.getElementById("lightStatus");
+
+  lightOn = !lightOn;
+
+  if (lightOn) {
+    bulb.style.background = "yellow";
+    bulb.style.opacity = 1;
+    status.innerText = "Light is ON";
+  } else {
+    bulb.style.background = "#333";
+    status.innerText = "Light is OFF";
+  }
+}
+
+function changeBrightness(value) {
+  if (lightOn) {
+    document.getElementById("bulb").style.opacity = value / 100;
+  }
+}
+// Sidebar hide/show on scroll
+let lastScrollTop = 0;
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", function () {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop && scrollTop > 150) {
+    // scrolling DOWN
+    header.classList.add("hide-on-scroll");
+  } else {
+    // scrolling UP
+    header.classList.remove("hide-on-scroll");
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});

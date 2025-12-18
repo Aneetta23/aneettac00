@@ -60,7 +60,7 @@ a {
 
 /* Link hover */
 a:hover {
-  color: #004080;
+  color: #a6c880;
   text-decoration: underline;
 }
 
@@ -126,7 +126,7 @@ section {
    ========================= */
 
 #header {
-  background-color: #111827 !important;
+  background-color: #b4e6a0 !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -161,10 +161,10 @@ section {
 
 /* DARK BLUE SIDEBAR BACKGROUND */
 #header {
-  background: #0f172a !important;   /* Dark navy blue */
+  background: #6faa78 !important;   /* Dark navy blue */
 }
 #navmenu {
-  background: #0f172a !important;
+  background: #1b212f !important;
 }
 #navmenu ul li a {
   background: #1e293b !important;
@@ -174,22 +174,22 @@ section {
    ========================= */
 
 #header {
-  background-color: #0f172a !important; /* Dark blue */
+  background-color: #90995b !important; /* Dark blue */
 }
 
 #navmenu {
-  background-color: #0f172a !important;
+  background-color: #858b4e !important;
 }
 
 /* Menu icon buttons */
 #navmenu ul li a {
-  background-color: #1e293b !important;
-  color: #ffffff !important;
+  background-color: #a8ba77 !important;
+  color: #242a0e !important;
 }
 
 /* Active menu item */
 #navmenu ul li a.active {
-  background-color: #2563eb !important;
+  background-color: #cc8fe0 !important;
   color: #ffffff !important;
 }
 
@@ -414,7 +414,7 @@ html, body {
 .shape.circle {
   width: 80px;
   height: 80px;
-  background: #38bdf8;
+  background: #111213;
   border-radius: 50%;
   top: 20%;
   left: 10%;
@@ -434,7 +434,7 @@ html, body {
   height: 0;
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
-  border-bottom: 70px solid #f97316;
+  border-bottom: 70px solid #fe6c04;
   top: 75%;
   left: 20%;
   animation-delay: 4s;
@@ -453,7 +453,10 @@ html, body {
     animation: none !important;
     transition: none !important;
   }
-}
+} 
+/* =========================
+   MEMORY CARD GAME STYLES
+   ========================= */
 .game-board {
   display: grid;
   gap: 10px;
@@ -464,7 +467,7 @@ html, body {
   width: 100%;
   padding-top: 100%;
   position: relative;
-  background: #4da3ff;
+  background: #ec724c;
   border-radius: 10px;
   cursor: pointer;
   transform: scale(1);
@@ -496,12 +499,39 @@ main,
 .contact,
 .portfolio,
 .testimonials {
-  background-color: #edd7ed !important;
+  background-color: #e9a9e9 !important;
 }
 
 /* If image section still stays dark */
 .section-bg,
 .bg-light,
 .bg-white {
-  background-color: #e7ccee !important;
+  background-color: #e9a9e9 !important;
 }
+/* Sidebar slide on scroll */
+.header {
+  transition: transform 0.4s ease-in-out;
+}
+
+.header.hide-on-scroll {
+  transform: translateX(-100%);
+}
+
+/* Keep sidebar visible on mobile */
+@media (max-width: 1199px) {
+  .header.hide-on-scroll {
+    transform: translateX(0);
+  }
+}
+/* your existing custom styles above */
+
+
+/* FORCE override MyResume sidebar color */
+body.index-page .header::before {
+  background: #6e96e7 !important; /* CHANGE THIS COLOR */
+}
+/* CHANGE LEFT ICON SIDEBAR COLOR */
+.navmenu {
+  background-color: #f4c2f0 !important;  /* change this color */
+}
+
